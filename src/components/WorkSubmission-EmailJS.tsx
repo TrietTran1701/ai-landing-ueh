@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function WorkSubmission() {
   const [formData, setFormData] = useState({
@@ -31,37 +32,36 @@ export default function WorkSubmission() {
     setSubmitMessage("");
 
     try {
-      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-      const response = await fetch('https://formspree.io/f/xwpqbepz', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          socialNetwork: formData.socialNetwork,
-          projectTitle: formData.projectTitle,
-          projectUrl: formData.projectUrl,
-          hasCollaborators: formData.hasCollaborators ? 'Yes' : 'No',
-          _subject: `New AI Competition Submission: ${formData.projectTitle}`,
-        }),
-      });
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        social_network: formData.socialNetwork,
+        project_title: formData.projectTitle,
+        project_url: formData.projectUrl,
+        has_collaborators: formData.hasCollaborators ? 'Yes' : 'No',
+        to_email: 'your-email@example.com', // Replace with your email
+      };
 
-      if (response.ok) {
-        setSubmitMessage("🎉 Your submission has been received! We'll be in touch soon.");
-        setFormData({
-          fullName: "",
-          email: "",
-          socialNetwork: "",
-          projectTitle: "",
-          projectUrl: "",
-          hasCollaborators: false
-        });
-      } else {
-        setSubmitMessage("❌ There was an error submitting your form. Please try again.");
-      }
+      // Replace these with your EmailJS credentials
+      await emailjs.send(
+        'YOUR_SERVICE_ID',    // Replace with your service ID
+        'YOUR_TEMPLATE_ID',   // Replace with your template ID
+        templateParams,
+        'YOUR_PUBLIC_KEY'     // Replace with your public key
+      );
+
+      setSubmitMessage("🎉 Your submission has been received! We'll be in touch soon.");
+      setFormData({
+        fullName: "",
+        email: "",
+        socialNetwork: "",
+        projectTitle: "",
+        projectUrl: "",
+        hasCollaborators: false
+      });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       setSubmitMessage("❌ There was an error submitting your form. Please try again.");
     } finally {
       setIsSubmitting(false);
