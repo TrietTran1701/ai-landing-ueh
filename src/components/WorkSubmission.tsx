@@ -23,7 +23,7 @@ export default function WorkSubmission() {
                 Submission Received!
               </h2>
               <p className="text-lg text-[#BFBFBF] mb-8">
-                Thank you for your submission! We'll be in touch soon with updates about the competition.
+                Thank you for your submission! We&apos;ll be in touch soon with updates about the competition.
               </p>
               <button
                 onClick={() => window.location.reload()}
