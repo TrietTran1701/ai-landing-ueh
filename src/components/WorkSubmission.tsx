@@ -2,71 +2,41 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function WorkSubmission() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    socialNetwork: "",
-    projectTitle: "",
-    projectUrl: "",
-    hasCollaborators: false
-  });
+  const [state, handleSubmit] = useForm("xwpqbepz");
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage("");
-
-    try {
-      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-      const response = await fetch('https://formspree.io/f/xwpqbepz', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          socialNetwork: formData.socialNetwork,
-          projectTitle: formData.projectTitle,
-          projectUrl: formData.projectUrl,
-          hasCollaborators: formData.hasCollaborators ? 'Yes' : 'No',
-          _subject: `New AI Competition Submission: ${formData.projectTitle}`,
-        }),
-      });
-
-      if (response.ok) {
-        setSubmitMessage("🎉 Your submission has been received! We'll be in touch soon.");
-        setFormData({
-          fullName: "",
-          email: "",
-          socialNetwork: "",
-          projectTitle: "",
-          projectUrl: "",
-          hasCollaborators: false
-        });
-      } else {
-        setSubmitMessage("❌ There was an error submitting your form. Please try again.");
-      }
-    } catch (error) {
-      setSubmitMessage("❌ There was an error submitting your form. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // Show success message after successful submission
+  if (state.succeeded) {
+    return (
+      <section className="px-4 sm:px-6 py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-[#141414] backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="text-6xl mb-6">🎉</div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Submission Received!
+              </h2>
+              <p className="text-lg text-[#BFBFBF] mb-8">
+                Thank you for your submission! We'll be in touch soon with updates about the competition.
+              </p>
+              <button
+                onClick={() => window.location.reload()}
+                className="px-8 py-3 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-[1.02]"
+              >
+                Submit Another Project
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="px-4 sm:px-6 py-16 sm:py-20">
@@ -128,19 +98,15 @@ export default function WorkSubmission() {
             viewport={{ once: true }}
           >
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              {/* Submit Message */}
-              {submitMessage && (
+              {/* Show submission errors if any */}
+              {state.errors && Object.keys(state.errors).length > 0 && (
                 <motion.div 
-                  className={`p-4 rounded-xl text-sm ${
-                    submitMessage.includes('🎉') 
-                      ? 'bg-green-900/30 border border-green-500/50 text-green-300' 
-                      : 'bg-red-900/30 border border-red-500/50 text-red-300'
-                  }`}
+                  className="p-4 rounded-xl text-sm bg-red-900/30 border border-red-500/50 text-red-300"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {submitMessage}
+                  There were some errors with your submission. Please check the fields below.
                 </motion.div>
               )}
 
@@ -152,11 +118,15 @@ export default function WorkSubmission() {
                 <input
                   type="text"
                   name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
                   placeholder="Enter your first & last name"
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
+                />
+                <ValidationError 
+                  prefix="Full Name" 
+                  field="fullName"
+                  errors={state.errors}
+                  className="text-red-400 text-xs mt-1"
                 />
               </div>
 
@@ -165,8 +135,6 @@ export default function WorkSubmission() {
                 <input
                   type="checkbox"
                   name="hasCollaborators"
-                  checked={formData.hasCollaborators}
-                  onChange={handleInputChange}
                   className="w-4 h-4 mt-0.5 sm:mt-0 rounded border-gray-600 bg-transparent text-cyan focus:ring-cyan focus:ring-2 flex-shrink-0"
                 />
                 <label className="text-white text-xs sm:text-sm leading-relaxed">
@@ -182,11 +150,15 @@ export default function WorkSubmission() {
                 <input
                   type="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
                   placeholder="Enter your email"
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
+                />
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
+                  className="text-red-400 text-xs mt-1"
                 />
               </div>
 
@@ -198,10 +170,14 @@ export default function WorkSubmission() {
                 <input
                   type="url"
                   name="socialNetwork"
-                  value={formData.socialNetwork}
-                  onChange={handleInputChange}
                   placeholder="Enter your social network"
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
+                />
+                <ValidationError 
+                  prefix="Social Network" 
+                  field="socialNetwork"
+                  errors={state.errors}
+                  className="text-red-400 text-xs mt-1"
                 />
                 <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                   Share a link to your Social network. This helps us credit and tag your work publicly if you win
@@ -216,11 +192,15 @@ export default function WorkSubmission() {
                 <input
                   type="text"
                   name="projectTitle"
-                  value={formData.projectTitle}
-                  onChange={handleInputChange}
                   placeholder="Enter your project title"
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
+                />
+                <ValidationError 
+                  prefix="Project Title" 
+                  field="projectTitle"
+                  errors={state.errors}
+                  className="text-red-400 text-xs mt-1"
                 />
               </div>
 
@@ -232,25 +212,29 @@ export default function WorkSubmission() {
                 <input
                   type="url"
                   name="projectUrl"
-                  value={formData.projectUrl}
-                  onChange={handleInputChange}
                   placeholder="Enter your project URL"
                   className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
+                />
+                <ValidationError 
+                  prefix="Project URL" 
+                  field="projectUrl"
+                  errors={state.errors}
+                  className="text-red-400 text-xs mt-1"
                 />
               </div>
 
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={state.submitting}
                 className={`w-full py-3 sm:py-4 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base mt-6 sm:mt-8 ${
-                  isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                  state.submitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
-                whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-                whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                whileHover={!state.submitting ? { scale: 1.02 } : {}}
+                whileTap={!state.submitting ? { scale: 0.98 } : {}}
               >
-                {isSubmitting ? 'Submitting...' : 'Submit your work'}
+                {state.submitting ? 'Submitting...' : 'Submit your work'}
               </motion.button>
             </form>
           </motion.div>
