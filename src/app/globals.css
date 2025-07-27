@@ -133,6 +133,21 @@
   background: linear-gradient(135deg, #12E5FA 0%, #1C54CB 100%) !important;
 }
 
+.bg-radial-gradient {
+  background: radial-gradient(ellipse 60% 40% at 50% 5%, 
+    #032886 20%, 
+    #13161A 60%, 
+    #070B16 70%, 
+    #000000 100%);
+}
+
 .hover\:opacity-90:hover {
   opacity: 0.9;
+}
+
+.text-accent-gradient {
+  background: linear-gradient(125deg, #12E5FA 0%, #1C54CB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
