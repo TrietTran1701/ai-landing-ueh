@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Info from "@/components/Info";
 import CompetitionCategories from "@/components/CompetitionCategories";
+import BrandedAdvertising from "@/components/BrandedAdvertising";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Info />
       <CompetitionCategories />
+      <BrandedAdvertising />
     </div>
   );
 }
