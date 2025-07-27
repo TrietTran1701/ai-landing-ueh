@@ -87,10 +87,10 @@ export default function WorkSubmission() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Full Name */}
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-white text-xs sm:text-sm font-medium mb-2">
                   YOUR FULL NAME:
                 </label>
                 <input
@@ -99,28 +99,28 @@ export default function WorkSubmission() {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   placeholder="Enter your first & last name"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
                 />
               </div>
 
               {/* Collaborators Checkbox */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-start sm:items-center space-x-3">
                 <input
                   type="checkbox"
                   name="hasCollaborators"
                   checked={formData.hasCollaborators}
                   onChange={handleInputChange}
-                  className="w-4 h-4 rounded border-gray-600 bg-transparent text-cyan focus:ring-cyan focus:ring-2"
+                  className="w-4 h-4 mt-0.5 sm:mt-0 rounded border-gray-600 bg-transparent text-cyan focus:ring-cyan focus:ring-2 flex-shrink-0"
                 />
-                <label className="text-white text-sm">
+                <label className="text-white text-xs sm:text-sm leading-relaxed">
                   Did you collaborate with anyone on this project?
                 </label>
               </div>
 
               {/* Email Address */}
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-white text-xs sm:text-sm font-medium mb-2">
                   YOUR EMAIL ADDRESS
                 </label>
                 <input
@@ -129,14 +129,14 @@ export default function WorkSubmission() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
                 />
               </div>
 
               {/* Social Network */}
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-white text-xs sm:text-sm font-medium mb-2">
                   YOUR SOCIAL NETWORK
                 </label>
                 <input
@@ -145,16 +145,16 @@ export default function WorkSubmission() {
                   value={formData.socialNetwork}
                   onChange={handleInputChange}
                   placeholder="Enter your social network"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                 />
-                <p className="text-xs text-gray-400 mt-2">
+                <p className="text-xs text-gray-400 mt-2 leading-relaxed">
                   Share a link to your Social network. This helps us credit and tag your work publicly if you win
                 </p>
               </div>
 
               {/* Project Title */}
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-white text-xs sm:text-sm font-medium mb-2">
                   PROJECT TITLE
                 </label>
                 <input
@@ -163,14 +163,14 @@ export default function WorkSubmission() {
                   value={formData.projectTitle}
                   onChange={handleInputChange}
                   placeholder="Enter your project title"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
                 />
               </div>
 
               {/* Project URL */}
               <div>
-                <label className="block text-white text-sm font-medium mb-2">
+                <label className="block text-white text-xs sm:text-sm font-medium mb-2">
                   THE URL TO YOUR PROJECT
                 </label>
                 <input
@@ -179,7 +179,7 @@ export default function WorkSubmission() {
                   value={formData.projectUrl}
                   onChange={handleInputChange}
                   placeholder="Enter your project URL"
-                  className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-transparent border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan focus:outline-none transition-colors duration-200 text-sm sm:text-base"
                   required
                 />
               </div>
@@ -187,7 +187,7 @@ export default function WorkSubmission() {
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-[1.02]"
+                className="w-full py-3 sm:py-4 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-[1.02] text-sm sm:text-base mt-6 sm:mt-8"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
