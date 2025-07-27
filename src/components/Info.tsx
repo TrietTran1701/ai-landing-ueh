@@ -8,7 +8,7 @@ export default function Info() {
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div
-          className="mb-20"
+          className="mb-10"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
