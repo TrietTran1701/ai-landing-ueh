@@ -29,10 +29,10 @@ export default function WorkSubmission() {
   };
 
   return (
-    <section className="px-6 py-20">
+    <section className="px-4 sm:px-6 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-[#141414] backdrop-blur-sm p-12 lg:p-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="bg-[#141414] backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Side - Logo and Title */}
           <motion.div 
             className="flex flex-col items-center lg:items-start text-center lg:text-left"
@@ -42,7 +42,7 @@ export default function WorkSubmission() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -52,7 +52,7 @@ export default function WorkSubmission() {
             </motion.h2>
             
             <motion.p 
-              className="text-lg text-[#BFBFBF] italic mb-12"
+              className="text-base sm:text-lg text-[#BFBFBF] italic mb-8 sm:mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -63,7 +63,7 @@ export default function WorkSubmission() {
 
             {/* AI Logo */}
             <motion.div 
-              className="relative w-80 h-80 mb-8"
+              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mb-6 sm:mb-8"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
