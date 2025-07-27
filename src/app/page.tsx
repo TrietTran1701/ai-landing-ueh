@@ -4,6 +4,9 @@ import Info from "@/components/Info";
 import CompetitionCategories from "@/components/CompetitionCategories";
 import BrandedAdvertising from "@/components/BrandedAdvertising";
 import JudgingPanel from "@/components/JudgingPanel";
+import CoOrganizer from "@/components/CoOrganizer";
+import ExploreSubmissions from "@/components/ExploreSubmissions";
+import WorkSubmission from "@/components/WorkSubmission";
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
       <CompetitionCategories />
       <BrandedAdvertising />
       <JudgingPanel />
+      <CoOrganizer />
+      <ExploreSubmissions />
+      <WorkSubmission />
     </div>
   );
 }
