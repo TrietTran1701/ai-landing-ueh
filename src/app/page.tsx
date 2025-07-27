@@ -7,6 +7,8 @@ import JudgingPanel from "@/components/JudgingPanel";
 import CoOrganizer from "@/components/CoOrganizer";
 import ExploreSubmissions from "@/components/ExploreSubmissions";
 import WorkSubmission from "@/components/WorkSubmission";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <CoOrganizer />
       <ExploreSubmissions />
       <WorkSubmission />
+      <FAQ />
+      <Footer />
     </div>
   );
 }
