@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 
 export default function Info() {
   return (
-    <section className="px-6 pb-20">
+    <section className="px-4 sm:px-6 pb-16 sm:pb-20">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div
-          className="mb-10"
+          className="mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h2
-            className="text-xl md:text-4xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -30,7 +30,7 @@ export default function Info() {
             </span>
           </motion.h2>
           <motion.p
-            className="text-[#BFBFBF] text-xl font-medium"
+            className="text-[#BFBFBF] text-lg sm:text-xl font-medium"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -41,7 +41,7 @@ export default function Info() {
         </motion.div>
 
         {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-16 lg:gap-20">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20">
           {/* Left Column - Text Content */}
           <motion.div
             className="space-y-6"
@@ -51,7 +51,7 @@ export default function Info() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.p
-              className="text-white text-base leading-relaxed"
+              className="text-white text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -64,7 +64,7 @@ export default function Info() {
             </motion.p>
 
             <motion.p
-              className="text-white text-base leading-relaxed"
+              className="text-white text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -77,7 +77,7 @@ export default function Info() {
             </motion.p>
 
             <motion.p
-              className="text-white text-base leading-relaxed"
+              className="text-white text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -90,7 +90,7 @@ export default function Info() {
             </motion.p>
 
             <motion.p
-              className="text-white text-base leading-relaxed"
+              className="text-white text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -112,7 +112,7 @@ export default function Info() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.p
-              className="text-white text-base leading-relaxed"
+              className="text-white text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -124,14 +124,14 @@ export default function Info() {
             </motion.p>
 
             <motion.p
-              className="text-white text-base leading-relaxed"
+              className="text-white text-sm sm:text-base leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               Whether your submission is poetic or practical, surreal or
-              data-driven, we encourage you to push the boundaries of what's
+              data-driven, we encourage you to push the boundaries of what&apos;s
               possible with generative tools. Show us the future world as
               imagined by you—and your AI.
             </motion.p>
@@ -144,18 +144,18 @@ export default function Info() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <motion.h3
-                className="bg-gradient-to-r from-cyan to-blue bg-clip-text text-transparent text-4xl md:text-3xl lg:text-3xl font-bold leading-tight mb-8"
+                className="bg-gradient-to-r from-cyan to-blue bg-clip-text text-transparent text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold leading-tight mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                AI is not just a tool—it's a new lens through which we perceive
+                AI is not just a tool—it&apos;s a new lens through which we perceive
                 the world
               </motion.h3>
 
               <motion.p
-                className="text-[#BFBFBF] text-xl font-medium"
+                className="text-[#BFBFBF] text-lg sm:text-xl font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}

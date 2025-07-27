@@ -52,18 +52,18 @@ export default function ExploreSubmissions() {
   ];
 
   return (
-    <section className="px-6 py-20">
+    <section className="px-4 sm:px-6 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div 
-          className="mb-12"
+          className="mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -75,7 +75,7 @@ export default function ExploreSubmissions() {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[180px] sm:auto-rows-[200px]">
           {submissions.map((submission, index) => (
             <motion.div 
               key={submission.id}
@@ -112,13 +112,13 @@ export default function ExploreSubmissions() {
 
         {/* View More Button */}
         <motion.div 
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-8 sm:mt-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <button className="px-8 py-3 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-full hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-105">
+          <button className="px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-full hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-105 text-sm sm:text-base">
             View All Submissions
           </button>
         </motion.div>
@@ -127,7 +127,7 @@ export default function ExploreSubmissions() {
       {/* Image Modal */}
       {selectedImage && (
         <motion.div 
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-2 sm:p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -144,16 +144,16 @@ export default function ExploreSubmissions() {
               src={selectedImage}
               alt="Full size submission"
               fill
-              className="object-contain rounded-2xl"
-              sizes="90vw"
+              className="object-contain rounded-xl sm:rounded-2xl"
+              sizes="(max-width: 640px) 95vw, 90vw"
             />
             
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 sm:p-2 transition-all duration-200"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

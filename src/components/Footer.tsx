@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Footer() {
   const handleSubmitClick = () => {
     // Scroll to the WorkSubmission component
@@ -22,42 +20,24 @@ export default function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 py-8 flex items-center justify-center">
-        <motion.div 
-          className="flex flex-col md:flex-row items-center gap-4"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
+        <div className="flex flex-col md:flex-row items-center gap-4">
           {/* Left Side - Tagline */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
+          <div>
             <p className="text-[#BFBFBF] text-lg md:text-xl font-medium text-center md:text-left">
               Your imagination, our first milestone
             </p>
-          </motion.div>
+          </div>
 
           {/* Right Side - Submit Button */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <motion.button
+          <div>
+            <button
               onClick={handleSubmitClick}
-              className="px-8 py-3 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-gradient-to-r from-cyan to-blue text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan/25 transition-all duration-300 hover:scale-105"
             >
               Submit now
-            </motion.button>
-          </motion.div>
-        </motion.div>
+            </button>
+          </div>
+        </div>
       </div>
     </footer>
   );
