@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="flex-1 flex mt-20 justify-center px-6">
+    <section className="min-h-screen flex justify-center px-6 pt-20">
       <div className="text-center max-w-4xl">
         <div className="">
           <p className="text-white text-lg mb-2 font-bold">DEADLINE: OCTOBER 15, 2025</p>

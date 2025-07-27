@@ -1,10 +1,10 @@
 export default function Info() {
   return (
-    <section className="py-20 px-6">
+    <section className="p-6">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <div className="mb-20">
-          <h2 className="text-xl md:text-5xl font-bold mb-6">
+          <h2 className="text-xl md:text-3xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan to-blue bg-clip-text text-transparent">
               The 1st World AI-Powered Image
             </span>
@@ -13,7 +13,7 @@ export default function Info() {
               & Visual Awards
             </span>
           </h2>
-          <p className="text-[#BFBFBF] text-xl md:text-2xl font-medium">
+          <p className="text-[#BFBFBF] text-xl font-medium">
             Visions of the Future: Imagined by AI, Inspired by Humanity
           </p>
         </div>
@@ -67,12 +67,12 @@ export default function Info() {
             </p>
 
             <div className="mt-8">
-              <h3 className="bg-gradient-to-r from-cyan to-blue bg-clip-text text-transparent text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
+              <h3 className="bg-gradient-to-r from-cyan to-blue bg-clip-text text-transparent text-3xl md:text-3xl lg:text-3xl font-bold leading-tight mb-8">
                 AI is not just a tool—it's a new lens through which we perceive
                 the world
               </h3>
 
-              <p className="text-[#BFBFBF] text-xl md:text-2xl font-medium">
+              <p className="text-[#BFBFBF] text-xl font-medium">
                 From how we see and interpret reality, to how we create,
                 collaborate, and communicate, and ultimately, how we live and
                 find meaning.
