@@ -9,8 +9,8 @@ export default function WorkSubmission() {
 
   // Show success message after successful submission
   if (state.succeeded) {
-    return (
-      <section className="px-4 sm:px-6 py-16 sm:py-20">
+          return (
+        <section id="submit" className="px-4 sm:px-6 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto">
           <div className="bg-[#141414] backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl text-center">
             <motion.div
@@ -39,7 +39,7 @@ export default function WorkSubmission() {
   }
 
   return (
-    <section className="px-4 sm:px-6 py-16 sm:py-20">
+    <section id="submit" className="px-4 sm:px-6 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         <div className="bg-[#141414] backdrop-blur-sm p-6 sm:p-8 md:p-12 lg:p-16 rounded-2xl">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">

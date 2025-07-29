@@ -62,8 +62,13 @@ export default function Hero() {
           How AI Transforms the Way We See, Work, and Live
         </p>
         
-        <Button className="px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium">
-          Submit now
+        <Button 
+          asChild
+          className="px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium"
+        >
+          <a href="#submit">
+            Submit now
+          </a>
         </Button>
       </div>
     </section>
