@@ -48,7 +48,7 @@ export default function JudgingPanel() {
   ];
 
   return (
-    <section className="px-6 py-20">
+    <section id="judges" className="px-6 py-20">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div 

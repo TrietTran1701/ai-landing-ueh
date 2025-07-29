@@ -52,7 +52,7 @@ export default function ExploreSubmissions() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 py-16 sm:py-20">
+    <section id="explore" className="px-4 sm:px-6 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div 

@@ -20,16 +20,16 @@ export default function Header() {
         </div>
         
         <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 font-medium">
-          <a href="#" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
+          <a href="#about" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
             About us
           </a>
-          <a href="#" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
+          <a href="#categories" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
             Competition Categories
           </a>
-          <a href="#" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
+          <a href="#judges" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
             Judging Panel
           </a>
-          <a href="#" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
+          <a href="#explore" className="text-white hover:text-cyan transition-colors text-sm xl:text-base">
             Explore
           </a>
         </div>
@@ -58,28 +58,28 @@ export default function Header() {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-sm border-t border-gray-800 z-50">
           <div className="px-4 py-6 space-y-4">
             <a 
-              href="#" 
+              href="#about" 
               className="block text-white hover:text-cyan transition-colors py-2 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               About us
             </a>
             <a 
-              href="#" 
+              href="#categories" 
               className="block text-white hover:text-cyan transition-colors py-2 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Competition Categories
             </a>
             <a 
-              href="#" 
+              href="#judges" 
               className="block text-white hover:text-cyan transition-colors py-2 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Judging Panel
             </a>
             <a 
-              href="#" 
+              href="#explore" 
               className="block text-white hover:text-cyan transition-colors py-2 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >

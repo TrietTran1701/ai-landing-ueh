@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Info() {
   return (
-    <section className="px-4 sm:px-6 pb-16 sm:pb-20">
+    <section id="about" className="px-4 sm:px-6 pb-16 sm:pb-20">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div

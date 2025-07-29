@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function CompetitionCategories() {
   return (
-    <section className="px-4 sm:px-6 py-16 sm:py-20">
+    <section id="categories" className="px-4 sm:px-6 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto">
         {/* Title Section */}
         <motion.div 
