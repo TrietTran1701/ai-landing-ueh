@@ -26,7 +26,7 @@ export default function Hero() {
     <section className="min-h-screen flex justify-center px-4 sm:px-6 pt-16 sm:pt-20">
       <div className="text-center max-w-4xl w-full">
         <div className="mb-4 sm:mb-6">
-          <p className="text-white text-sm sm:text-base md:text-lg mb-2 font-bold">DEADLINE: SEPTEMBER 10, 2025</p>
+          <p className="text-white text-sm sm:text-base md:text-lg mb-2 font-bold">DEADLINE: SEPTEMBER 18, 2025</p>
         </div>
         
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight min-h-[1.2em] mb-6 sm:mb-8">
